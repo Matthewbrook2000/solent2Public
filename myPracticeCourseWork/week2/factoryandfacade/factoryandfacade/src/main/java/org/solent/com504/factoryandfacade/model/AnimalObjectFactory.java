@@ -13,8 +13,22 @@ public class AnimalObjectFactory{
     public static Animal createCow() {
         return new Cow();
     }
+    
+    public static Animal createCat(String name) {
+        return new Cat();
+    }
+
+    public static Animal createDog(String name) {
+        return new Dog();
+    }
+
+    public static Animal createCow(String name) {
+        return new Cow();
+    }
 
     public static FarmFacade createFarmFacade() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        
+        
+        return new FarmFacadeImpl();
     }
 }
