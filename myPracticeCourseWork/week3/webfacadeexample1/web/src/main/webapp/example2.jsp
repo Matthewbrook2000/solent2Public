@@ -28,6 +28,8 @@
 
     List<String> supportedAnimalTypes = (List<String>) session.getAttribute("supportedAnimalTypes");
 
+    String animalNameStr = request.getParameter("animalName");
+    String animalTypeStr = request.getParameter("animalType");
 %>
 
 <html>
@@ -35,13 +37,22 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page Farm</title>
     </head>
+    
+    <% if(animalNameStr != null || animalTypeStr != null) {
+    
+        
+    %>
+    <p>create animal type= <%=animalTypeStr %> name <%=animalNameStr %></p>
+    
+    <%} %> 
+    
     <body>
         <p>Page for Farm</p>
         <p>Supported Animal Types</p>
         <table>
             <% for (String animalType : supportedAnimalTypes) {%>
             <tr>
-                <td><%=animalType%></td>
+                <td><button><%=animalType%></button></td>
             </tr>
             <%
                 }
@@ -55,6 +66,12 @@
                 <th>Name</th>
                 <th>Sound</th>
             </tr>
+            <% 
+                farmFacade.addAnimal("Dog", "fido");
+                farmFacade.addAnimal("Cow", "mooer");
+                farmFacade.addAnimal("Cat", "steve");
+            %>
+            
             <% for (Animal animal : farmFacade.getAllAnimals()) {%>
             <tr>
                 <td><%=animal.getAnimalType()%></td>
