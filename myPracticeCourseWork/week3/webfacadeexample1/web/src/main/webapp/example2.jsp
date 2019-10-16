@@ -28,10 +28,10 @@
 
     List<String> supportedAnimalTypes = (List<String>) session.getAttribute("supportedAnimalTypes");
 
-    String animalNameStr = request.getParameter("animalName");
-    String animalTypeStr = request.getParameter("animalType");
+    String animalNameStr = request.getParameter("animal_name");
+    String animalTypeStr = request.getParameter("animal_type");
 %>
-
+ 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -39,25 +39,29 @@
     </head>
     
     <% if(animalNameStr != null || animalTypeStr != null) {
-    
+        farmFacade.addAnimal(animalTypeStr, animalNameStr);
         
     %>
-    <p>create animal type= <%=animalTypeStr %> name <%=animalNameStr %></p>
+    <!-- <p> type= <%=animalTypeStr %> name= <%=animalNameStr %></p> -->
     
     <%} %> 
     
     <body>
         <p>Page for Farm</p>
         <p>Supported Animal Types</p>
-        <table>
+        
+        <form>
+            Animal name: <input type="text" name="animal_name">
+        <select name="animal_type">
             <% for (String animalType : supportedAnimalTypes) {%>
-            <tr>
-                <td><button><%=animalType%></button></td>
-            </tr>
-            <%
+            <option value="<%=animalType%>"> <%=animalType%> </option>
+            <% 
                 }
             %>
-        </table> 
+        </select>
+            <button>Add</button>
+        </form>
+        
 
         <p>Animals on Farm</p>
         <table>
