@@ -34,6 +34,10 @@
 <<<<<<< HEAD
 =======
         <module>workup/webfacadeexample1</module>
+<<<<<<< HEAD
+>>>>>>> upstream/master
+=======
+        <module>workup/mavenproject1</module>
 >>>>>>> upstream/master
     </modules>
 </project>
