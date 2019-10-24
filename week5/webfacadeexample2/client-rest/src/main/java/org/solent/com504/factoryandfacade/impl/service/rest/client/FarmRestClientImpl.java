@@ -103,10 +103,20 @@ public class FarmRestClientImpl implements FarmFacade {
     @Override
     public List<Animal> getAnimalsOfType(String animalType) {
         LOG.debug("client getAnimalsOfType Called animalType=" + animalType);
-        List<Animal> animals = null;
-        
-        
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        Client client = ClientBuilder.newClient(new ClientConfig().register(LoggingFilter.class));
+        WebTarget webTarget = client.target(baseUrl).path("getAnimalsOfType").queryParam("animalType", animalType);
+        Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_XML);
+        Response response = webTarget.request().get();
+
+        ReplyMessage replyMessage = response.readEntity(ReplyMessage.class);
+        LOG.debug("Response status=" + response.getStatus() + " ReplyMessage: " + replyMessage);
+
+        if (!replyMessage.getAnimalList().getAnimals().isEmpty()) {
+            return replyMessage.getAnimalList().getAnimals();
+        }
+        return new ArrayList<Animal>();
+
     }
 
     @Override

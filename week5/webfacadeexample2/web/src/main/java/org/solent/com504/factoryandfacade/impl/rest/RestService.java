@@ -225,13 +225,15 @@ public class RestService {
            
             if(serviceFacade.removeAnimal(animalName)){
                 replyMessage.setDebugMessage("animal name removed");
+                replyMessage.setCode(Response.Status.OK.getStatusCode());
+                return Response.status(Response.Status.OK).entity(replyMessage).build();
             }
             else{
                 replyMessage.setDebugMessage("resource not found");
+                replyMessage.setCode(Response.Status.NOT_FOUND.getStatusCode());
+                return Response.status(Response.Status.NOT_FOUND).entity(replyMessage).build();
             }
 
-            replyMessage.setCode(Response.Status.OK.getStatusCode());
-            return Response.status(Response.Status.OK.INTERNAL_SERVER_ERROR).entity(replyMessage).build();
         } catch (Exception ex) {
             LOG.error("error calling /removeAnimal ", ex);
             ReplyMessage replyMessage = new ReplyMessage();
