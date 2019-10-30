@@ -60,7 +60,11 @@ public class RestClientFarmFacadeTest {
         LOG.debug("end of testAddAnimal()");
     }
 
+<<<<<<< HEAD
     @Test
+=======
+@Test
+>>>>>>> upstream/master
     public void testGetAnimalsOfType() {
         LOG.debug("testGetAnimalsOfType()");
         String animalType = "Cat";
@@ -68,12 +72,20 @@ public class RestClientFarmFacadeTest {
         assertNotNull(animals);
         String msg = "returned :" + animals;
         for (Animal value : animals) {
+<<<<<<< HEAD
             msg = msg + value + ",";
+=======
+            msg = msg + value + ",\n";
+>>>>>>> upstream/master
         }
         LOG.debug(msg);
         LOG.debug("end of GetAnimalsOfType()");
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
     @Test
     public void testGetAnimal() {
         fail("test not written");

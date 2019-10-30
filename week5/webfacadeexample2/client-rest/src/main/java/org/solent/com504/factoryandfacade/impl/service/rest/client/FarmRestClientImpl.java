@@ -100,11 +100,20 @@ public class FarmRestClientImpl implements FarmFacade {
         return supportedAnimalTypes;
     }
 
+<<<<<<< HEAD
     @Override
+=======
+@Override
+>>>>>>> upstream/master
     public List<Animal> getAnimalsOfType(String animalType) {
         LOG.debug("client getAnimalsOfType Called animalType=" + animalType);
 
         Client client = ClientBuilder.newClient(new ClientConfig().register(LoggingFilter.class));
+<<<<<<< HEAD
+=======
+        
+        // note that this adds url params in a urlencoded safe way
+>>>>>>> upstream/master
         WebTarget webTarget = client.target(baseUrl).path("getAnimalsOfType").queryParam("animalType", animalType);
         Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_XML);
         Response response = webTarget.request().get();
@@ -112,6 +121,7 @@ public class FarmRestClientImpl implements FarmFacade {
         ReplyMessage replyMessage = response.readEntity(ReplyMessage.class);
         LOG.debug("Response status=" + response.getStatus() + " ReplyMessage: " + replyMessage);
 
+<<<<<<< HEAD
         if (!replyMessage.getAnimalList().getAnimals().isEmpty()) {
             return replyMessage.getAnimalList().getAnimals();
         }
@@ -123,6 +133,16 @@ public class FarmRestClientImpl implements FarmFacade {
     public Animal getAnimal(String animalName) {
         LOG.debug("client getAnimal Called  animalName=" + animalName);
         
+=======
+        return replyMessage.getAnimalList().getAnimals();
+
+    }
+
+
+    @Override
+    public Animal getAnimal(String animalName) {
+        LOG.debug("client getAnimal Called  animalName=" + animalName);
+>>>>>>> upstream/master
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -9,7 +9,10 @@ package org.solent.com504.factoryandfacade.impl.rest;
  *
  * @author gallenc
  */
+<<<<<<< HEAD
 import java.util.ArrayList;
+=======
+>>>>>>> upstream/master
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -23,7 +26,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.solent.com504.factoryandfacade.impl.web.WebObjectFactory;
 import org.solent.com504.factoryandfacade.model.dto.Animal;
+<<<<<<< HEAD
 import org.solent.com504.factoryandfacade.model.dto.AnimalList;
+=======
+>>>>>>> upstream/master
 import org.solent.com504.factoryandfacade.model.dto.ReplyMessage;
 import org.solent.com504.factoryandfacade.model.service.FarmFacade;
 
@@ -151,12 +157,21 @@ public class RestService {
 
             FarmFacade serviceFacade = WebObjectFactory.getServiceFacade();
             ReplyMessage replyMessage = new ReplyMessage();
+<<<<<<< HEAD
             
             List<Animal> animals = serviceFacade.getAnimalsOfType(animalType);
             replyMessage.getAnimalList().setAnimals(animals);
             replyMessage.setCode(Response.Status.OK.getStatusCode());
             return Response.status(Response.Status.OK).entity(replyMessage).build();
             
+=======
+
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+
+            //replyMessage.setCode(Response.Status.OK.getStatusCode());
+            //return Response.status(Response.Status.OK).entity(replyMessage).build();
+>>>>>>> upstream/master
         } catch (Exception ex) {
             LOG.error("error calling /getAnimalsOfType ", ex);
             ReplyMessage replyMessage = new ReplyMessage();
@@ -183,6 +198,7 @@ public class RestService {
             LOG.debug("/getAnimal called animalName=" + animalName);
             FarmFacade serviceFacade = WebObjectFactory.getServiceFacade();
             ReplyMessage replyMessage = new ReplyMessage();
+<<<<<<< HEAD
             
             
             List<Animal> animal = new ArrayList<>();
@@ -194,6 +210,14 @@ public class RestService {
             replyMessage.setCode(Response.Status.OK.getStatusCode());
             return Response.status(Response.Status.OK).entity(replyMessage).build();
             
+=======
+
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+
+            //replyMessage.setCode(Response.Status.OK.getStatusCode());
+            //return Response.status(Response.Status.OK).entity(replyMessage).build();
+>>>>>>> upstream/master
         } catch (Exception ex) {
             LOG.error("error calling /getAnimal ", ex);
             ReplyMessage replyMessage = new ReplyMessage();
@@ -222,6 +246,7 @@ public class RestService {
 
             FarmFacade serviceFacade = WebObjectFactory.getServiceFacade();
             ReplyMessage replyMessage = new ReplyMessage();
+<<<<<<< HEAD
            
             if(serviceFacade.removeAnimal(animalName)){
                 replyMessage.setDebugMessage("animal name removed");
@@ -234,6 +259,13 @@ public class RestService {
                 return Response.status(Response.Status.NOT_FOUND).entity(replyMessage).build();
             }
 
+=======
+
+            throw new UnsupportedOperationException("Not supported yet.");
+
+            //replyMessage.setCode(Response.Status.OK.getStatusCode());
+            //return Response.status(Response.Status.OK).entity(replyMessage).build();
+>>>>>>> upstream/master
         } catch (Exception ex) {
             LOG.error("error calling /removeAnimal ", ex);
             ReplyMessage replyMessage = new ReplyMessage();
