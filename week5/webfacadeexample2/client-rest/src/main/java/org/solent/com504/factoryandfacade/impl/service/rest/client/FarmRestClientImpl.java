@@ -122,6 +122,7 @@ public class FarmRestClientImpl implements FarmFacade {
     @Override
     public Animal getAnimal(String animalName) {
         LOG.debug("client getAnimal Called  animalName=" + animalName);
+        
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
