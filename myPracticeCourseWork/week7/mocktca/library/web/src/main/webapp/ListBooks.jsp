@@ -98,10 +98,10 @@
 			bookTemplate.setTitle(searchTitleReq);
 			bookTemplate.setAuthor(searchAuthorReq);
 			bookTemplate.setIsbn(searchIsbnReq);
-			List<Book> book = serviceFacade.retrieveMatchingBooks(bookTemplate);
-                        String firstBook = book.get(0).toString();
+			bookList = serviceFacade.retrieveMatchingBooks(bookTemplate);
                         
-			if (book == null) {
+                        
+			if (bookList == null) {
 				errorMessage = "problem finding ";
 			}
 		} catch (Exception e) {
