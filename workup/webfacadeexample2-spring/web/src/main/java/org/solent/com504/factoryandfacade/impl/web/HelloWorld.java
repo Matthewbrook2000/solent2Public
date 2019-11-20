@@ -17,6 +17,7 @@ import org.apache.logging.log4j.Logger;
 public class HelloWorld {
 
     final static Logger LOG = LogManager.getLogger(HelloWorld.class);
+<<<<<<< HEAD
 
     public void init() {
         LOG.debug("init() Application context started HelloWorld");
@@ -24,6 +25,21 @@ public class HelloWorld {
 
     public void destroy() {
         LOG.debug("destroy() Application context stopped HelloWorld");
+=======
+    
+    private String message="";
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void init() {
+        LOG.debug("init() Application context started HelloWorld "+message);
+    }
+
+    public void destroy() {
+        LOG.debug("destroy() Application context stopped HelloWorld "+message);
+>>>>>>> upstream/master
 
     }
 

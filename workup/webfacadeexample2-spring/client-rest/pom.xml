@@ -36,7 +36,11 @@
         </dependency>
 
         <!-- Spring dependencies -->
+<<<<<<< HEAD
         <dependency>
+=======
+<!--        <dependency>
+>>>>>>> upstream/master
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <scope>compile</scope>
@@ -46,7 +50,11 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <scope>compile</scope>
+<<<<<<< HEAD
         </dependency>
+=======
+        </dependency>-->
+>>>>>>> upstream/master
         
         <!-- jersey dependencies -->
         <dependency>
@@ -60,6 +68,22 @@
             <artifactId>jersey-media-json-jackson</artifactId>
             <scope>compile</scope>
         </dependency>
+<<<<<<< HEAD
+=======
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-jaxb</artifactId>
+            <version>${jersey.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- or use spring -->
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>${jersey.version}</version>
+            <scope>compile</scope>
+        </dependency>
+>>>>>>> upstream/master
         
         <!-- Log4j API and Core implementation  -->
         <dependency>

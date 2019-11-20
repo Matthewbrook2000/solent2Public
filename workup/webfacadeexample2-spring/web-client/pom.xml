@@ -45,8 +45,18 @@
             <scope>provided</scope>
         </dependency>
         
+<<<<<<< HEAD
         
         <dependency>
+=======
+        <!-- or use spring -->
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <scope>compile</scope>
+        </dependency>
+         <dependency>
+>>>>>>> upstream/master
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet-core</artifactId>
             <scope>compile</scope>
@@ -96,7 +106,11 @@
                 <version>1.7.6</version>
                 <configuration>
                     <container>
+<<<<<<< HEAD
                         <containerId>tomcat9x</containerId>
+=======
+                        <containerId>tomcat8x</containerId>
+>>>>>>> upstream/master
                         <type>embedded</type>
                     </container>
                 </configuration>

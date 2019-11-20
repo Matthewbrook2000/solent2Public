@@ -55,7 +55,7 @@
                 <td>
                     <form action="./farm.jsp">
                         <input type="hidden" name="animalType" value="<%=animalType%>">
-                        Animal Name:  <input type="text" name="animalName">
+                        <input type="text" name="animalName">
                         <button type="submit" >Create <%=animalType%></button>
                     </form> 
                 </td>
